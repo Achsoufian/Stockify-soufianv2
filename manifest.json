@@ -1,0 +1,176 @@
+{
+  "name": "Stockify Soufian",
+  "short_name": "Stockify",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f5f7fa",
+  "theme_color": "#4361ee",
+  "description": "Professional inventory management application",
+  "id": "/",
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "orientation": "any",
+  "categories": [
+    "business",
+    "productivity",
+    "utilities"
+  ],
+  "iarc_rating_id": "E89A492C-6D9E-4C3D-B99C-7911462054AD",
+  "launch_handler": {
+    "client_mode": [
+      "focus-existing",
+      "auto"
+    ]
+  },
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "screenshots": [],
+  "scope_extensions": [],
+  "display_override": [
+    "window-controls-overlay"
+  ],
+  "shortcuts": [
+    {
+      "name": "New Stocktaking",
+      "short_name": "New Season",
+      "description": "Start a new stocktaking session",
+      "url": "/#stocktaking",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "maskable"
+        }
+      ]
+    },
+    {
+      "name": "Pricing Labels",
+      "short_name": "Labels",
+      "description": "Open Pricing Labels",
+      "url": "/#labels",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "maskable"
+        }
+      ]
+    },
+    {
+      "name": "Statistics",
+      "short_name": "Stats",
+      "description": "View statistics",
+      "url": "/#statistics",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "maskable"
+        }
+      ]
+    },
+    {
+      "name": "Scan Inventory",
+      "short_name": "Scan",
+      "description": "Start barcode scanner in Inventory search",
+      "url": "/#scan-inventory",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "maskable"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/index.html",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "file_handlers": [
+    {
+      "action": "/index.html",
+      "accept": {
+        "application/vnd.ms-excel": [
+          ".xls"
+        ],
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [
+          ".xlsx"
+        ],
+        "text/csv": [
+          ".csv"
+        ]
+      }
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+stockify",
+      "url": "/index.html?protocol=%s"
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 480
+  },
+  "handle_links": "auto",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

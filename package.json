@@ -1,0 +1,8 @@
+{
+  "name": "stockify-soufian-netlify",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "^9.0.0"
+  }
+}
