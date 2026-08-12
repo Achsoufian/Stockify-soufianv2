@@ -129,3 +129,53 @@
     }
   }, 100);
 })();
+
+/*
+ * Fixes typing lag in search/filter boxes (Inventory search, stock
+ * range, price range, etc).
+ *
+ * script.js's search fields each call debounce(...) fresh on every
+ * single keystroke instead of reusing one debounced function. Since
+ * every call creates a brand new independent timer, none of them
+ * cancel each other — type 5 characters quickly and you schedule 5
+ * separate full inventory searches that all still fire, one after
+ * another, instead of just the one you actually wanted. That pileup
+ * of redundant searches is what shows up as lag while typing.
+ *
+ * This patches the global debounce() so all calls to it share a
+ * single timer, restoring normal debounce behavior (each new
+ * keystroke cancels the previous pending search) without touching
+ * any of the search box code itself.
+ */
+(function () {
+  function patchDebounce() {
+    if (typeof window.debounce !== 'function' || window.debounce.__stockifyPatched) return;
+
+    let sharedTimeoutId = null;
+
+    const patched = function (func, delay) {
+      return function (...args) {
+        const context = this;
+        clearTimeout(sharedTimeoutId);
+        sharedTimeoutId = setTimeout(() => func.apply(context, args), delay);
+      };
+    };
+
+    patched.__stockifyPatched = true;
+    window.debounce = patched;
+  }
+
+  patchDebounce();
+
+  // script.js may load after this file, so retry briefly.
+  let debAttempts = 0;
+  const debTimer = setInterval(() => {
+    debAttempts += 1;
+    if (typeof window.debounce === 'function') {
+      patchDebounce();
+      clearInterval(debTimer);
+    } else if (debAttempts > 50) {
+      clearInterval(debTimer);
+    }
+  }, 100);
+})();
